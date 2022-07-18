@@ -53,7 +53,7 @@ interface AsyncRoutesMap {
 //     path: '/dashboard',
 //     name: 'Dashboard',
 //     component: Layout,
-//     // redirect:{name:'Work'},
+//     redirect:{name:'Work'},
 //     meta: { title: '工作台', icon: 'home', parent: { name: '' } },
 //     hidden: false,
 //     children: [
@@ -108,8 +108,11 @@ interface AsyncRoutesMap {
 // ]
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+  }
 })
 
 export default router

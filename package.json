@@ -28,6 +28,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.2.0",
     "node-sass": "^7.0.1",
+    "postcss-px-to-viewport": "^1.1.1",
     "sass": "^1.52.1",
     "sass-loader": "^13.0.2",
     "typescript": "^4.5.4",
