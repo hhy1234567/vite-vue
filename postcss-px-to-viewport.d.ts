@@ -18,3 +18,4 @@ declare module 'postcss-px-to-viewport' {
   }
 
   export default (options: Partial<Options>) => any
+}
