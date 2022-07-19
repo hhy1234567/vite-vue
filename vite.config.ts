@@ -9,6 +9,8 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // 引入对应 UI库的 resolver，则对应UI组件库的组件也不需要单独引入了
 
 import postcsspxtoviewport from "postcss-px-to-viewport"
+//使用mock
+import { viteMockServe } from 'vite-plugin-mock'
 
 import Unocss from 'unocss/vite'
 import {
@@ -27,9 +29,18 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src')
+    }
+  },
   plugins: [
     vue(),
-
+    viteMockServe({
+      supportTs: true,
+      logger: false,
+      mockPath: "@/mock/"
+    }),
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'], // 需要自动引入api的库
       eslintrc: {
@@ -69,11 +80,7 @@ export default defineConfig({
     }),
 
   ],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src')
-    }
-  },
+
   css: {
     postcss: {
       plugins: [
