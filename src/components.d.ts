@@ -7,6 +7,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AAffix: typeof import('ant-design-vue/es')['Affix']
+    AButton: typeof import('ant-design-vue/es')['Button']
+    ASwitch: typeof import('ant-design-vue/es')['Switch']
     ElOption: typeof import('element-plus/es')['ElOption']
     ElRate: typeof import('element-plus/es')['ElRate']
     ElSelect: typeof import('element-plus/es')['ElSelect']

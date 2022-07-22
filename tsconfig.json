@@ -26,7 +26,8 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "postcss-px-to-viewport.d.ts"
+    "postcss-px-to-viewport.d.ts",
+    "mock/**/*.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

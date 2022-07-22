@@ -1,3 +1,4 @@
+import { MockMethod } from 'vite-plugin-mock';
 export default [
   {
     url: "/api/getUsers",
@@ -10,4 +11,4 @@ export default [
       }
     }
   }
-]
+] as MockMethod[];
