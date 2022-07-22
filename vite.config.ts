@@ -1,7 +1,16 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
 import AutoImport from 'unplugin-auto-import/vite'//在这用这个辅助插件不用每个页面都去引入vue的那些方法
+
+import {
+  createStyleImportPlugin,
+  AndDesignVueResolve,
+  VantResolve,
+  ElementPlusResolve,
+  NutuiResolve,
+  AntdResolve,
+} from 'vite-plugin-style-import'
+
 // 实现 组件的按需加载
 // 当引入 "unplugin-vue-components/vite 组件之后，页面中需要引入组件的地方就都不需要引入了
 import Components from "unplugin-vue-components/vite";
@@ -78,7 +87,21 @@ export default defineConfig({
         transformerVariantGroup(),
       ]
     }),
-
+    createStyleImportPlugin({
+      resolves: [
+        AndDesignVueResolve(),
+      ],
+      libs: [
+        // If you don’t have the resolve you need, you can write it directly in the lib, or you can provide us with PR
+        {
+          libraryName: 'ant-design-vue',
+          esModule: true,
+          resolveStyle: (name) => {
+            return `ant-design-vue/es/${name}/style/css`
+          },
+        },
+      ],
+    }),
   ],
 
   css: {
@@ -96,7 +119,7 @@ export default defineConfig({
     //       mediaQuery: true, // 是否在媒体查询的css代码中也进行转换，默认false
     //       replace: true, // 是否转换后直接更换属性值
     //       landscape: false, // 是否处理横屏情况
-    //       // exclude: /node_modules/i
+    //       exclude: /node_modules/i
     //     })
     //   ]
     // },

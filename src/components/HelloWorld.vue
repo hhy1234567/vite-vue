@@ -1,6 +1,6 @@
 <template>
   <a-affix :offset-top="top">
-    <a-button type="primary" @click="top += 10">Affix top</a-button>
+    <a-button type="primary" @click="">Affix top</a-button>
   </a-affix>
   <h1>{{ msg }}</h1>
   <h2>{{ token }}{{ name }}</h2>

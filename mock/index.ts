@@ -9,6 +9,7 @@ export default [
         message: "ok",
         data: ["tom", "jerry"],
       }
-    }
+    },
+
   }
 ] as MockMethod[];
