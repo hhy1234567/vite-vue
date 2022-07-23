@@ -154,9 +154,9 @@ instance.interceptors.response.use(function (config) {
     setTimeout(() => {
       // dataList.show = false
     }, 400)
-    return Promise.resolve(config);
+    return Promise.resolve(config.data);
   } else {
-    return Promise.reject(config);
+    return Promise.reject(config.data);
   }
   // 请求失败
 }, function (error) {

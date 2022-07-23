@@ -1,15 +1,12 @@
 import { MockMethod } from 'vite-plugin-mock';
-export default [
-  {
-    url: "/api/getUsers",
-    method: "get",
-    response: () => {
-      return {
-        code: 0,
-        message: "ok",
-        data: ["tom", "jerry"],
-      }
-    },
+import article from './modules/article'
 
-  }
-] as MockMethod[];
+
+
+
+let interfaceArr: Array<any> = [];
+interfaceArr = interfaceArr.concat(article);
+
+
+
+export default interfaceArr as MockMethod[];
