@@ -6,10 +6,18 @@ import App from './App.vue'
 import router from '@/router';
 import 'uno.css'
 
-
+const app = createApp(App);
 
 
 const pinia = createPinia()
 
 // .use(Antd)
-createApp(App).use(router).use(pinia).mount('#app')
+
+app.use(router).use(pinia);
+app.mount('#app');
+
+// console.log(
+//   import.meta.env,
+//   // process.env.VUE_APP_API_URL,
+//   "环境变量"
+// );
